@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "bokeStoreSSIS", "bokeStoreSSIS\bokeStoreSSIS.dtproj", "{C58C0CFA-974B-40B6-8D0B-AA498EA74998}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C58C0CFA-974B-40B6-8D0B-AA498EA74998}.Development|Default.ActiveCfg = Development
+		{C58C0CFA-974B-40B6-8D0B-AA498EA74998}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F38221CA-4106-45C6-94C1-9D0F21387ABF}
+	EndGlobalSection
+EndGlobal
