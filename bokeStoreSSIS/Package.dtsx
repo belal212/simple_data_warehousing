@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{02A923E6-6C9F-46F0-A400-D256D8BBBBB8}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{CEA46656-AFBA-46C5-8184-26043DC043EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -544,131 +544,6 @@
           version="1">
           <components>
             <component
-              refId="Package\Date Data Flow Task\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Date Data Flow Task\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Date Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[OrderDate]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="OrderDate"
-                      lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Date Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[YEAR]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[YEAR]"
-                      name="YEAR"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[YEAR]((DT_DATE)#{Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">YEAR((DT_DATE)OrderDate)</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MONTH]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MONTH]"
-                      name="MONTH"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[MONTH]((DT_DATE)#{Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">MONTH((DT_DATE)OrderDate)</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Quarter]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Quarter]"
-                      name="Quarter"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">([MONTH]((DT_DATE)#{Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]}) + 2) / 3</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(MONTH((DT_DATE)OrderDate) + 2) / 3</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Date Data Flow Task\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Date Data Flow Task\Excel Source"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -731,15 +606,6 @@
                       lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]"
                       name="OrderDate"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderID]"
-                      lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderID]"
-                      name="OrderID"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -785,11 +651,6 @@
                       length="255"
                       lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderDate]"
                       name="OrderDate" />
-                    <outputColumn
-                      refId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderID]"
-                      dataType="r8"
-                      lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[OrderID]"
-                      name="OrderID" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -868,36 +729,19 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YEAR]"
+                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateID]"
                       cachedDataType="i4"
-                      cachedName="YEAR"
-                      externalMetadataColumnId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[YEAR]" />
-                    <inputColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MONTH]"
-                      cachedDataType="i4"
-                      cachedName="MONTH"
-                      externalMetadataColumnId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[MONTH]" />
-                    <inputColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Quarter]"
-                      cachedDataType="i4"
-                      cachedName="Quarter"
-                      externalMetadataColumnId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
-                      lineageId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Quarter]" />
+                      cachedName="DateID"
+                      externalMetadataColumnId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateID]"
+                      lineageId="Package\Date Data Flow Task\Script Component.Outputs[Output 0].Columns[DateID]" />
                     <inputColumn
                       refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderDate]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="OrderDate"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FullDate]"
-                      lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]" />
-                    <inputColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderID]"
-                      cachedDataType="r8"
-                      cachedName="OrderID"
-                      externalMetadataColumnId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateID]"
-                      lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderID]" />
+                      lineageId="Package\Date Data Flow Task\Sort.Outputs[Sort Output].Columns[OrderDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -911,21 +755,6 @@
                       dataType="wstr"
                       length="255"
                       name="FullDate" />
-                    <externalMetadataColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="wstr"
-                      length="255"
-                      name="Year" />
-                    <externalMetadataColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
-                      dataType="wstr"
-                      length="255"
-                      name="Month" />
-                    <externalMetadataColumn
-                      refId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quarter]"
-                      dataType="wstr"
-                      length="255"
-                      name="Quarter" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -954,668 +783,875 @@
                 </output>
               </outputs>
             </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Date Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Date Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Date Data Flow Task.Paths[Excel Source Output]"
-              endId="Package\Date Data Flow Task\Derived Column.Inputs[Derived Column Input]"
-              name="Excel Source Output"
-              startId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Fact_Sales Data Flow Task"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{2EBF66F6-7443-4167-8B2D-A12C09B8A2C5}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Fact_Sales Data Flow Task"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
             <component
-              refId="Package\Fact_Sales Data Flow Task\Lookup"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup"
-              usesDispositions="true"
-              version="6">
+              refId="Package\Date Data Flow Task\Script Component"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Script Component"
+              version="13">
               <properties>
                 <property
                   dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CustomerID, FullName
-FROM     Dim_Customers</property>
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    int id = 1;
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        Row.DateID = id;
+        id++;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int32 DateID
+    {
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool DateID_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cd22cb140e4f41338a678a1e3f4266e7.Properties.Settings.get_Default():SC_cd22cb140e4f41338a678a1e3f4266e7.Properties.Sett" +
+    "ings")]
+
+namespace SC_cd22cb140e4f41338a678a1e3f4266e7.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_cd22cb140e4f41338a678a1e3f4266e7</msb:CodeName>
+    <msb:DisplayName>SC_cd22cb140e4f41338a678a1e3f4266e7</msb:DisplayName>
+    <msb:ProjectId>{366495DB-6AF0-4BF6-91FF-77AA05CDF6B6}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_cd22cb140e4f41338a678a1e3f4266e7.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_cd22cb140e4f41338a678a1e3f4266e7")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_cd22cb140e4f41338a678a1e3f4266e7")]
+[assembly: AssemblyCopyright("Copyright @  2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_cd22cb140e4f41338a678a1e3f4266e7.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28e1eaf2-91a8-41b4-8b35-d0562b52d382}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_cd22cb140e4f41338a678a1e3f4266e7</RootNamespace>
+    <AssemblyName>SC_cd22cb140e4f41338a678a1e3f4266e7</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_cd22cb140e4f41338a678a1e3f4266e7" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cd22cb140e4f41338a678a1e3f4266e7.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cd22cb140e4f41338a678a1e3f4266e7.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_cd22cb140e4f41338a678a1e3f4266e7.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_cd22cb140e4f41338a678a1e3f4266e7.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_cd22cb140e4f41338a678a1e3f4266e7.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
                 <property
                   dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_cd22cb140e4f41338a678a1e3f4266e7.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANA/ZGcAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAGjEA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMgwAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAIBEAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAD8
+MAAAAAAAAEgAAAACAAUApCEAAGwOAAABAAAAAAAAABAwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACipuAwJ7AQAABG8GAAAGAgJ7AQAA
+BBdYfQEAAAQqOgIXfQEAAAQCKAoAAAYqKgIDBAUoEgAACio6AhYDjBoAAAEoEwAACipaAywIAhYo
+FAAACipyAQAAcHMVAAAKeh4CKBYAAAoqHgIoFwAACip+AigYAAAKAgJzDgAABn0CAAAEAgJzDwAA
+Bn0DAAAEKpIEcp4AAHAabxkAAAosFQIFAgMoGgAACg4EcwUAAAZvDAAABipKKwcCA28NAAAGA28I
+AAAGLfEqBio6AigbAAAKAgN9BAAABCo6AigbAAAKAgN9BQAABCoeAigbAAAKKq5+BgAABC0ecq4A
+AHDQBwAAAigcAAAKbx0AAApzHgAACoAGAAAEfgYAAAQqGn4HAAAEKh4CgAcAAAQqGn4IAAAEKh4C
+KB8AAAoqLnMVAAAGgAgAAAQqAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAk
+BQAAI34AAJAFAAAYBgAAI1N0cmluZ3MAAAAAqAsAACABAAAjVVMAyAwAABAAAAAjR1VJRAAAANgM
+AACUAQAAI0Jsb2IAAAAAAAAAAgAAAVcVoAEJAQAAAPoBMwAWAAABAAAAIAAAAAgAAAAIAAAAFgAA
+AA8AAAAfAAAAEAAAAAMAAAAFAAAABgAAAAEAAAAEAAAAAQAAAAAA/gIBAAAAAAAGAPgBTwQGAIwC
+TwQGAEQBPAQPAMMEAAAGAHEBkQMGANsBkQMGALwBkQMGAHMCkQMGABgCkQMGADECkQMGAIgBkQMG
+AKMBxwIKAEwCkQAKAA4EkQAOAP8DkQAKANoDkQAKAIkFkQAGAEwFSQMGACcBPAQGAB8EbwQGAM4D
+fAMSAPcA6AISAFgB6AISAN8AZwMGAAwBTwQGAAEASQMGAKMDSQMGAOECSQMGAL0DSQMGALIASQMG
+AGMASQMGAA4GkQMAAAAAKwAAAAAAAQABAAEAEABcAwAAEAABAAEAAQAQAPIDAAA5AAIABQABABAA
+awUAAEUAAgAKAAEAEABABQAASQAEAA4AAQAQAAEFAABJAAUADwAAABAAdgTSBEkABgAQAAABEAAw
+BdIEYQAIABQAAQBQAGMABgBABWYABgABBWoAAQB5BW4AAQB5BW4AEQBQA3IAEQDPAHYAEQBTAHoA
+UCAAAAAAxgCqAgYAAQBYIAAAAADGALUCBgABAGAgAAAAAMYA6wV+AAEAfCAAAAAAhhgvBAYAAgCL
+IAAAAACGGC8EGwACAJYgAAAAAIYINAABAAUApSAAAAAAhggmA4QABgC8IAAAAACGAAIGKwAHAMQg
+AAAAAIYAUwUrAAcAzCAAAAAAhhgvBAYABwDsIAAAAADGAN4FiQAHABEhAAAAAMYB1wV+AAsAJCEA
+AAAAxgHrBX4ADAAmIQAAAACGGC8EkwANADUhAAAAAIYYLwSTAA4ARCEAAAAAgxgvBAYADwBMIQAA
+AACTCBsEmQAPAHghAAAAAJMItwCeAA8AfyEAAAAAkwjDAKMADwCHIQAAAACWCF8FqQAQAI4hAAAA
+AIYYLwQGABAAliEAAAAAkRg1BK4AEAAAAAEABgYAAAEAFAQAAAIACwUAAAMA6AMAAAEAwQIAAAEA
+wQIAAAEAPwAAAAIAhwAAAAMAFAQAAAQA6AMAAAEAFAQAAAEABgYAAAEAjwUAAAEAjwUAAAEAwQIJ
+AC8EAQARAC8EBgAZAC8ECgApAC8EEAAxAC8EEAA5AC8EEABBAC8EEABJAC8EEABRAC8EEABZAC8E
+EABhAC8EEABpAC8EBgCZAC8EBgC5AC8EFQDJAC8EBgCJAKoCBgCJALUCBgBxAC8EGwBxAEADJQBx
+ADgDAQDZAC8EEABxAAIGKwBxAFMFKwCJAC8EBgDhADkFLwCJAB8FNgCRAC8EBgDxAHUAPADxAAoG
+QwChAC8ESQDBAC8EBgAuAAsAyQAuABMA0gAuABsA8QAuACMA+gAuACsAIwEuADMAIwEuADsAIwEu
+AEMA+gAuAEsAKQEuAFMAIwEuAFsAQAFDAGMAjgFpAHMA8QCJAHMA8QDjAGsAjgEBAXsAjgEDAAEA
+BwADAAgABQAAADgAsgAAACoDtgAAAB8EugAAANcAvwAAAGMFxAABAAYAAwABAAcABQACABEABwAC
+ABIACQABABMACQACABQACwAEgAAAAQAAAAAAAAAAAAAAAAAHAAAABAAAAAAAAAAAAAAAUQBHAAAA
+AAAQAAAAAAAAAAAAAABaAJkFAAAAABAAAAAAAAAAAAAAAFoAtgUAAAAABAAAAAAAAAAAAAAAUQBJ
+AwAAAAAAAAAAAQAAAIAEAAAAAABJbnQzMgBTQ19jZDIyY2IxNDBlNGY0MTMzOGE2NzhhMWUzZjQy
+NjZlNwA8TW9kdWxlPgBzZXRfRGF0ZUlEAElucHV0SUQAbXNjb3JsaWIAaWQAZGVmYXVsdEluc3Rh
+bmNlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAElucHV0TmFtZQBNaWNyb3Nv
+ZnQuU3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJl
+c291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93c2FibGVTdGF0
+ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRl
+AERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0
+bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0
+cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9u
+QXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0
+QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRDb21wb25lbnRF
+bnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0
+aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAHZhbHVlAFN5c3RlbS5SdW50
+aW1lLlZlcnNpb25pbmcAU3RyaW5nAFN5c3RlbS5Db21wb25lbnRNb2RlbABTQ19jZDIyY2IxNDBl
+NGY0MTMzOGE2NzhhMWUzZjQyNjZlNy5kbGwAc2V0X0RhdGVJRF9Jc051bGwAU2V0TnVsbABzZXRf
+SXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBT
+eXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBJbnZhbGlkT3BlcmF0aW9uRXhj
+ZXB0aW9uAFN0cmluZ0NvbXBhcmlzb24AQ3VsdHVyZUluZm8AT3V0cHV0TmFtZU1hcABPdXRwdXRN
+YXAASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3VyY2VN
+YW5hZ2VyAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29t
+cGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDX2NkMjJjYjE0MGU0ZjQxMzM4YTY3OGEx
+ZTNmNDI2NmU3LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBT
+Q19jZDIyY2IxNDBlNGY0MTMzOGE2NzhhMWUzZjQyNjZlNy5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBC
+dWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5l
+Y3Rpb25zAE9iamVjdABFbmRPZlJvd3NldABnZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVu
+dENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlwdABN
+aWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AElucHV0
+MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBnZXRfQXNzZW1ibHkAAACAm0kAcwBOAHUAbABsACAA
+cAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBs
+AHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8A
+bAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwBjAGQAMgAy
+AGMAYgAxADQAMABlADQAZgA0ADEAMwAzADgAYQA2ADcAOABhADEAZQAzAGYANAAyADYANgBlADcA
+LgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAANdfLjMcDchEpbu99GDS
+xOMABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkJIAMBEj0dCBJBBSACAQgcAyAAAgYgAgIOEXUF
+IAEdCAgGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJECBggDBhIUAwYSGAMG
+EkUDBhJRAwYSVQMGEiAFIAEBEgwEIAEBAgkgBAEIDhI9EkEFIAEBEkUEAAASUQQAABJVBQABARJV
+BAAAEiADAAABAygACAMoAAIECAASUQQIABJVBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25F
+eGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NDX2NkMjJjYjE0MGU0ZjQxMzM4YTY3OGExZTNm
+NDI2NmU3AAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjQAAE0BABwuTkVURnJhbWV3b3JrLFZl
+cnNpb249djQuNy4yAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRQuTkVUIEZyYW1ld29yayA0Ljcu
+MgQBAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwg
+bXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tl
+bj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAA
+AAAAAAAAAAAAUEFEUEFEULQAAADwMAAAAAAAAAAAAAAKMQAAACAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAA/DAAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
+AAAAUwBDAF8AYwBkADIAMgBjAGIAMQA0ADAAZQA0AGYANAAxADMAMwA4AGEANgA3ADgAYQAxAGUA
+MwBmADQAMgA2ADYAZQA3AAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADAALgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwBjAGQAMgAyAGMA
+YgAxADQAMABlADQAZgA0ADEAMwAzADgAYQA2ADcAOABhADEAZQAzAGYANAAyADYANgBlADcALgBk
+AGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcA
+aAB0ACAAQAAgACAAMgAwADIANAAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBz
+AAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfAGMA
+ZAAyADIAYwBiADEANAAwAGUANABmADQAMQAzADMAOABhADYANwA4AGEAMQBlADMAZgA0ADIANgA2
+AGUANwAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwBjAGQA
+MgAyAGMAYgAxADQAMABlADQAZgA0ADEAMwAzADgAYQA2ADcAOABhADEAZQAzAGYANAAyADYANgBl
+ADcAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
+OAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAABwxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
+                </property>
                 <property
                   dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CustomerID" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullName" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_cd22cb140e4f41338a678a1e3f4266e7</property>
                 <property
-                  containsID="true"
                   dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap"></property>
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
                 <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
                 <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">C3</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
               </properties>
-              <connections>
-                <connection
-                  refId="Package\Fact_Sales Data Flow Task\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-L4AJNSK0.BikeData]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-L4AJNSK0.BikeData]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
               <inputs>
                 <input
-                  refId="Package\Fact_Sales Data Flow Task\Lookup.Inputs[Lookup Input]"
-                  name="Lookup Input">
+                  refId="Package\Date Data Flow Task\Script Component.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Fact_Sales Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  refId="Package\Date Data Flow Task\Script Component.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Date Data Flow Task\Script Component.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[CustomerID]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copy Column"
-                      length="255"
-                      lineageId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Match Output].Columns[CustomerID]"
-                      name="CustomerID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">CustomerID</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Fact_Sales Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Fact_Sales Data Flow Task\Lookup.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Date Data Flow Task\Script Component.Outputs[Output 0].Columns[DateID]"
                       dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
+                      lineageId="Package\Date Data Flow Task\Script Component.Outputs[Output 0].Columns[DateID]"
+                      name="DateID" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Fact_Sales Data Flow Task\Merge Join"
-              componentClassID="Microsoft.MergeJoin"
-              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-              name="Merge Join"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of join to perform."
-                  name="JoinType"
-                  typeConverter="JoinType">2</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the number of columns in the ordering key."
-                  name="NumKeyColumns">1</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the null values are treated as equal values."
-                  name="TreatNullsAsEqual">true</property>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates the requested maximum buffers per input before blocking."
-                  name="MaxBuffersPerInput">5</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Left Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[OrderID]"
-                      cachedDataType="r8"
-                      cachedName="OrderID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[OrderID]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
-                  hasSideEffects="true"
-                  name="Merge Join Right Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[OrderID]"
-                      cachedDataType="r8"
-                      cachedName="OrderID"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\Fact_Sales Data Flow Task\Sort.Outputs[Sort Output].Columns[OrderID]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Merge Join.Outputs[Merge Join Output]"
-                  isSorted="true"
-                  name="Merge Join Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[OrderID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[OrderID]"
-                      name="OrderID"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[OrderID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[OrderID (1)]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[OrderID (1)]"
-                      name="OrderID (1)">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[OrderID]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Fact_Sales Data Flow Task\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <externalMetadataColumns
-                    isUsed="True" />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="Order Detail Excel Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">OrderDetails$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[OrderID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderID]"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[OrderID]"
-                      name="OrderID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[ProductID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductID]"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[ProductID]"
-                      name="ProductID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[Quantity]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[Quantity]"
-                      name="Quantity"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[LineTotal]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[LineTotal]"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[LineTotal]"
-                      name="LineTotal"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDetailID]"
-                      dataType="r8"
-                      name="OrderDetailID" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderID]"
-                      dataType="r8"
-                      name="OrderID" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[ProductID]"
-                      dataType="r8"
-                      name="ProductID" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[Quantity]"
-                      dataType="r8"
-                      name="Quantity" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].ExternalColumns[LineTotal]"
-                      dataType="r8"
-                      name="LineTotal" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[OrderID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[OrderID]"
-                      name="OrderID" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[ProductID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[ProductID]"
-                      name="ProductID" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[Quantity]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[Quantity]"
-                      name="Quantity" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[LineTotal]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[LineTotal]"
-                      name="LineTotal" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Fact_Sales Data Flow Task\Order Excel Source"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="Order Excel Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Orders$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderID]"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderID]"
-                      name="OrderID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderDate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDate]"
-                      length="255"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderDate]"
-                      name="OrderDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[CustomerID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[CustomerID]"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[CustomerID]"
-                      name="CustomerID"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderID]"
-                      dataType="r8"
-                      name="OrderID" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[OrderDate]"
-                      dataType="wstr"
-                      length="255"
-                      name="OrderDate" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[CustomerID]"
-                      dataType="r8"
-                      name="CustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].ExternalColumns[TotalAmount]"
-                      dataType="r8"
-                      name="TotalAmount" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[OrderID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[OrderID]"
-                      name="OrderID" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[OrderDate]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[OrderDate]"
-                      name="OrderDate" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[CustomerID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[CustomerID]"
-                      name="CustomerID" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Fact_Sales Data Flow Task\Sort"
+              refId="Package\Date Data Flow Task\Sort"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
@@ -1625,7 +1661,7 @@ FROM     Dim_Customers</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
+                  name="EliminateDuplicates">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the maximum number of threads to use for sorting."
@@ -1634,99 +1670,15 @@ FROM     Dim_Customers</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Fact_Sales Data Flow Task\Sort.Inputs[Sort Input]"
+                  refId="Package\Date Data Flow Task\Sort.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort.Inputs[Sort Input].Columns[OrderID]"
-                      cachedDataType="r8"
-                      cachedName="OrderID"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[OrderID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Fact_Sales Data Flow Task\Sort.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort.Outputs[Sort Output].Columns[OrderID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Sort.Outputs[Sort Output].Columns[OrderID]"
-                      name="OrderID"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output].Columns[OrderID]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Fact_Sales Data Flow Task\Sort 1"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort 1"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Fact_Sales Data Flow Task\Sort 1.Inputs[Sort Input]"
-                  name="Sort Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort 1.Inputs[Sort Input].Columns[OrderID]"
-                      cachedDataType="r8"
-                      cachedName="OrderID"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort 1.Inputs[Sort Input].Columns[OrderDate]"
+                      refId="Package\Date Data Flow Task\Sort.Inputs[Sort Input].Columns[OrderDate]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="OrderDate"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderDate]">
+                      lineageId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1735,23 +1687,7 @@ FROM     Dim_Customers</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort 1.Inputs[Sort Input].Columns[CustomerID]"
-                      cachedDataType="r8"
-                      cachedName="CustomerID"
-                      lineageId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[CustomerID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1760,49 +1696,23 @@ FROM     Dim_Customers</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output]"
+                  refId="Package\Date Data Flow Task\Sort.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[OrderID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[OrderID]"
-                      name="OrderID"
+                      refId="Package\Date Data Flow Task\Sort.Outputs[Sort Output].Columns[OrderDate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Date Data Flow Task\Sort.Outputs[Sort Output].Columns[OrderDate]"
+                      name="OrderDate"
                       sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[OrderDate]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[OrderDate]"
-                      name="OrderDate">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[OrderDate]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[CustomerID]"
-                      dataType="r8"
-                      lineageId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output].Columns[CustomerID]"
-                      name="CustomerID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output].Columns[CustomerID]}</property>
+                          name="SortColumnId">#{Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[OrderDate]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1813,30 +1723,20 @@ FROM     Dim_Customers</property>
           </components>
           <paths>
             <path
-              refId="Package\Fact_Sales Data Flow Task.Paths[Excel Source Output]"
-              endId="Package\Fact_Sales Data Flow Task\Sort.Inputs[Sort Input]"
+              refId="Package\Date Data Flow Task.Paths[Excel Source Output]"
+              endId="Package\Date Data Flow Task\Sort.Inputs[Sort Input]"
               name="Excel Source Output"
-              startId="Package\Fact_Sales Data Flow Task\Order Detail Excel Source.Outputs[Excel Source Output]" />
+              startId="Package\Date Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Fact_Sales Data Flow Task.Paths[Excel Source Output1]"
-              endId="Package\Fact_Sales Data Flow Task\Sort 1.Inputs[Sort Input]"
-              name="Excel Source Output"
-              startId="Package\Fact_Sales Data Flow Task\Order Excel Source.Outputs[Excel Source Output]" />
+              refId="Package\Date Data Flow Task.Paths[Output 0]"
+              endId="Package\Date Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Output 0"
+              startId="Package\Date Data Flow Task\Script Component.Outputs[Output 0]" />
             <path
-              refId="Package\Fact_Sales Data Flow Task.Paths[Merge Join Output]"
-              endId="Package\Fact_Sales Data Flow Task\Lookup.Inputs[Lookup Input]"
-              name="Merge Join Output"
-              startId="Package\Fact_Sales Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Fact_Sales Data Flow Task.Paths[Sort Output]"
-              endId="Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
+              refId="Package\Date Data Flow Task.Paths[Sort Output]"
+              endId="Package\Date Data Flow Task\Script Component.Inputs[Input 0]"
               name="Sort Output"
-              startId="Package\Fact_Sales Data Flow Task\Sort.Outputs[Sort Output]" />
-            <path
-              refId="Package\Fact_Sales Data Flow Task.Paths[Sort Output1]"
-              endId="Package\Fact_Sales Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Fact_Sales Data Flow Task\Sort 1.Outputs[Sort Output]" />
+              startId="Package\Date Data Flow Task\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2291,10 +2191,6 @@ FROM     Dim_Customers</property>
           Size="188.8,41.6"
           Id="Package\Product Data Flow Task"
           TopLeft="424.166643491223,108.333332579997" />
-        <NodeLayout
-          Size="205.6,41.6"
-          Id="Package\Fact_Sales Data Flow Task"
-          TopLeft="444.166642398471,202.799998589754" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2302,15 +2198,19 @@ FROM     Dim_Customers</property>
     design-time-name="Package\Customer Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\Customer Data Flow Task\Customer Excel"
-          TopLeft="203.33332222369,106.599999258717" />
+          Size="171.2,41.6"
+          Id="Package\Customer Data Flow Task\OLE DB Destination"
+          TopLeft="494.999972954394,304.199997884631" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Customer Data Flow Task\Derived Column"
           TopLeft="329.999981969596,204.266665485435" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Customer Data Flow Task\Customer Excel"
+          TopLeft="203.33332222369,106.599999258717" />
         <EdgeLayout
           Id="Package\Customer Data Flow Task.Paths[Excel Source Output]"
           TopLeft="279.33332222369,148.199999258717">
@@ -2342,13 +2242,11 @@ FROM     Dim_Customers</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Customer Data Flow Task\OLE DB Destination"
-          TopLeft="494.999972954394,304.199997884631" />
         <EdgeLayout
           Id="Package\Customer Data Flow Task.Paths[Derived Column Output]"
           TopLeft="406.399981969596,245.866665485435">
@@ -2380,7 +2278,9 @@ FROM     Dim_Customers</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2422,39 +2322,43 @@ FROM     Dim_Customers</property>
           Id="Package\Date Data Flow Task\Excel Source"
           TopLeft="269.999995976687,35.9999994635582" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Date Data Flow Task\Derived Column"
-          TopLeft="420.999993726611,151.999997735024" />
+          Size="161.6,41.6"
+          Id="Package\Date Data Flow Task\Script Component"
+          TopLeft="287.499984291693,197.599998698234" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Date Data Flow Task\OLE DB Destination"
-          TopLeft="546.999991849065,279.999995827675" />
+          TopLeft="200.833322360284,279.066664726072" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Date Data Flow Task\Sort"
+          TopLeft="564.999969129762,112.199999258717" />
         <EdgeLayout
           Id="Package\Date Data Flow Task.Paths[Excel Source Output]"
           TopLeft="339.999995976687,77.5999994635582">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="157.399997749924,74.3999982714658"
+              EndConnector="273.799973153075,34.5999997951587"
               Start="0,0"
-              End="157.399997749924,66.8999982714658">
+              End="273.799973153075,27.0999997951587">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.1999991357329" />
+                    End="0,13.2999998975793" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.1999991357329"
-                    Point2="0,37.1999991357329"
-                    Point3="4,37.1999991357329" />
+                    Point1="0,13.2999998975793"
+                    Point2="0,17.2999998975793"
+                    Point3="4,17.2999998975793" />
                   <mssgle:LineSegment
-                    End="153.399997749924,37.1999991357329" />
+                    End="269.799973153075,17.2999998975793" />
                   <mssgle:CubicBezierSegment
-                    Point1="153.399997749924,37.1999991357329"
-                    Point2="157.399997749924,37.1999991357329"
-                    Point3="157.399997749924,41.1999991357329" />
+                    Point1="269.799973153075,17.2999998975793"
+                    Point2="273.799973153075,17.2999998975793"
+                    Point3="273.799973153075,21.2999998975793" />
                   <mssgle:LineSegment
-                    End="157.399997749924,66.8999982714658" />
+                    End="273.799973153075,27.0999997951587" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2464,31 +2368,65 @@ FROM     Dim_Customers</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Date Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="497.399993726611,193.599997735024">
+          Id="Package\Date Data Flow Task.Paths[Sort Output]"
+          TopLeft="613.799969129762,153.799999258717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="135.199998122454,86.3999980926514"
+              EndConnector="-245.499984838069,43.7999994395173"
               Start="0,0"
-              End="135.199998122454,78.8999980926514">
+              End="-245.499984838069,36.2999994395173">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.1999990463257" />
+                    End="0,17.8999997197586" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.1999990463257"
-                    Point2="0,43.1999990463257"
-                    Point3="4,43.1999990463257" />
+                    Point1="0,17.8999997197586"
+                    Point2="0,21.8999997197586"
+                    Point3="-4,21.8999997197586" />
                   <mssgle:LineSegment
-                    End="131.199998122454,43.1999990463257" />
+                    End="-241.499984838069,21.8999997197586" />
                   <mssgle:CubicBezierSegment
-                    Point1="131.199998122454,43.1999990463257"
-                    Point2="135.199998122454,43.1999990463257"
-                    Point3="135.199998122454,47.1999990463257" />
+                    Point1="-241.499984838069,21.8999997197586"
+                    Point2="-245.499984838069,21.8999997197586"
+                    Point3="-245.499984838069,25.8999997197586" />
                   <mssgle:LineSegment
-                    End="135.199998122454,78.8999980926514" />
+                    End="-245.499984838069,36.2999994395173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Date Data Flow Task.Paths[Output 0]"
+          TopLeft="368.299984291693,239.199998698234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.8666619314091,39.8666660278378"
+              Start="0,0"
+              End="-81.8666619314091,32.3666660278378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.9333330139189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.9333330139189"
+                    Point2="0,19.9333330139189"
+                    Point3="-4,19.9333330139189" />
+                  <mssgle:LineSegment
+                    End="-77.8666619314091,19.9333330139189" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.8666619314091,19.9333330139189"
+                    Point2="-81.8666619314091,19.9333330139189"
+                    Point3="-81.8666619314091,23.9333330139189" />
+                  <mssgle:LineSegment
+                    End="-81.8666619314091,32.3666660278378" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2513,32 +2451,23 @@ FROM     Dim_Customers</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Date Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Product Data Flow Task">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="140,41.6"
-          Id="Package\Product Data Flow Task\Excel Source"
-          TopLeft="238.999996438623,38.9999994188547" />
+          Size="171.2,41.6"
+          Id="Package\Product Data Flow Task\OLE DB Destination"
+          TopLeft="320.999995216727,270.999995961785" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Product Data Flow Task\Conditional Split"
           TopLeft="394.999994114041,159.999997615814" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Product Data Flow Task\Excel Source"
+          TopLeft="238.999996438623,38.9999994188547" />
         <EdgeLayout
           Id="Package\Product Data Flow Task.Paths[Excel Source Output]"
           TopLeft="308.999996438623,80.5999994188547">
@@ -2570,13 +2499,11 @@ FROM     Dim_Customers</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Product Data Flow Task\OLE DB Destination"
-          TopLeft="320.999995216727,270.999995961785" />
         <EdgeLayout
           Id="Package\Product Data Flow Task.Paths[Case 1]"
           TopLeft="471.799994114041,201.599997615814">
@@ -2642,214 +2569,8 @@ FROM     Dim_Customers</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Fact_Sales Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="198.4,41.6"
-          Id="Package\Fact_Sales Data Flow Task\Order Detail Excel Source"
-          TopLeft="463.999993085861,49.999999254942" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Fact_Sales Data Flow Task\OLE DB Destination"
-          TopLeft="48.2307685120747,340.999994918704" />
-        <NodeLayout
-          Size="168.8,41.6"
-          Id="Package\Fact_Sales Data Flow Task\Order Excel Source"
-          TopLeft="290.999995663762,50.9999992400408" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Fact_Sales Data Flow Task\Merge Join"
-          TopLeft="449.230762536709,220.769227479513" />
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Fact_Sales Data Flow Task\Sort"
-          TopLeft="525.384607555775,135.384613367227" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Fact_Sales Data Flow Task\Sort 1"
-          TopLeft="380.769225095327,124.615382758471" />
-        <EdgeLayout
-          Id="Package\Fact_Sales Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="563.199993085861,91.599999254942">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.9846144699133,43.7846141122855"
-              Start="0,0"
-              End="10.9846144699133,36.2846141122855">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.8923070561427" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.8923070561427"
-                    Point2="0,21.8923070561427"
-                    Point3="4,21.8923070561427" />
-                  <mssgle:LineSegment
-                    End="6.98461446991325,21.8923070561427" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.98461446991325,21.8923070561427"
-                    Point2="10.9846144699133,21.8923070561427"
-                    Point3="10.9846144699133,25.8923070561427" />
-                  <mssgle:LineSegment
-                    End="10.9846144699133,36.2846141122855" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact_Sales Data Flow Task.Paths[Excel Source Output1]"
-          TopLeft="375.399995663762,92.5999992400408">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="58.5692294315649,32.0153835184299"
-              Start="0,0"
-              End="58.5692294315649,24.5153835184299">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.0076917592149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.0076917592149"
-                    Point2="0,16.0076917592149"
-                    Point3="4,16.0076917592149" />
-                  <mssgle:LineSegment
-                    End="54.5692294315649,16.0076917592149" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54.5692294315649,16.0076917592149"
-                    Point2="58.5692294315649,16.0076917592149"
-                    Point3="58.5692294315649,20.0076917592149" />
-                  <mssgle:LineSegment
-                    End="58.5692294315649,24.5153835184299" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact_Sales Data Flow Task.Paths[Sort Output]"
-          TopLeft="574.184607555775,176.984613367227">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-60.1538450190654,43.7846141122854"
-              Start="0,0"
-              End="-60.1538450190654,36.2846141122854">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.8923070561427" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.8923070561427"
-                    Point2="0,21.8923070561427"
-                    Point3="-4,21.8923070561427" />
-                  <mssgle:LineSegment
-                    End="-56.1538450190654,21.8923070561427" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-56.1538450190654,21.8923070561427"
-                    Point2="-60.1538450190654,21.8923070561427"
-                    Point3="-60.1538450190654,25.8923070561427" />
-                  <mssgle:LineSegment
-                    End="-60.1538450190654,36.2846141122854" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact_Sales Data Flow Task.Paths[Sort Output1]"
-          TopLeft="433.969225095327,166.215382758471">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.7948707747153,54.5538447210422"
-              Start="0,0"
-              End="59.7948707747153,47.0538447210422">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.3331323590567" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.3331323590567"
-                    Point2="0,32.3331323590567"
-                    Point3="4,32.3331323590567" />
-                  <mssgle:LineSegment
-                    End="55.7948707747153,32.3331323590567" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.7948707747153,32.3331323590567"
-                    Point2="59.7948707747153,32.3331323590567"
-                    Point3="59.7948707747153,36.3331323590567" />
-                  <mssgle:LineSegment
-                    End="59.7948707747153,47.0538447210422" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Fact_Sales Data Flow Task\Lookup"
-          TopLeft="314.61537992725,295.384610983042" />
-        <EdgeLayout
-          Id="Package\Fact_Sales Data Flow Task.Paths[Merge Join Output]"
-          TopLeft="514.030762536709,262.369227479513">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-143.015382609459,33.0153835035288"
-              Start="0,0"
-              End="-143.015382609459,25.5153835035288">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.5076917517644" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5076917517644"
-                    Point2="0,16.5076917517644"
-                    Point3="-4,16.5076917517644" />
-                  <mssgle:LineSegment
-                    End="-139.015382609459,16.5076917517644" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-139.015382609459,16.5076917517644"
-                    Point2="-143.015382609459,16.5076917517644"
-                    Point3="-143.015382609459,20.5076917517644" />
-                  <mssgle:LineSegment
-                    End="-143.015382609459,25.5153835035288" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales Data Flow Task\Order Detail Excel Source">
+    design-time-name="Package\Date Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2858,42 +2579,6 @@ FROM     Dim_Customers</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales Data Flow Task\Order Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact_Sales Data Flow Task\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
